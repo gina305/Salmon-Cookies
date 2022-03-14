@@ -1,0 +1,31 @@
+
+* {
+    background-color: lightgrey;
+  }
+  
+  h1 {
+    font-size: 2.5vw;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 50px;
+    color: rgb(122, 8, 27);
+    padding-top: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5vw;
+  }
+  
+  
+  ul {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+  head{
+    border-color: pink;
+    border-width: 10px;
+  }
+  body{
+    padding: 20px;
+    
+  }

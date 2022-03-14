@@ -1,2 +1,6 @@
+# LAB - 06
 # Salmon-Cookies
-A project for a cookie shop that sells cookies with a hint of fishy goodness.
+In this project, I build an app for a cookie shop that sells cookies with a hint of fishy goodness. This project/app helps Pat, a cookie store own track cookie inventory across multiple store locations. 
+
+
+
