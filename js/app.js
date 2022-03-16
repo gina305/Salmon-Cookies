@@ -71,8 +71,6 @@ for (let i = 0; i < stores.length; i++) {
   //Push the temporary array into the storeData array
   storeData.push(tempArray);
 
- 
-
 console.table(storeData);
 
   //Store name
@@ -80,44 +78,27 @@ console.table(storeData);
   //Save Store name to storeResults array
  // storeResults.push(storeName);
   
-for (let index = 1; index < storeHours.length; index++) {
+for (let index = 1; index <=storeHours.length; index++) {
   //Get the first hours from the storeHours array
   let hour = storeHours[index];
   
   //Calculate average cookies
   let customers= store.CxPerHour(min,max);
 
-  
-  
- // storeResults.push(storeName);
-  
   // Calculate the cookies for the hour 
   let cookiesThisHour = Math.round(customers * avgCookie);
 
-  //storeResults.push(storeName);
- // storeResults.push(cookiesThisHour);
-  //storeResults.push(customers);
-  //console.table(storeResults);
+ 
   //Create the element to push to index.html
-  let text = '<ul> ' + hour + ': ' + cookiesThisHour + ' cookies. </ul>';
+  let text =  hour + ': ' + cookiesThisHour + ' cookies.';
     console.log(text);
  // Push theses calculated results to an array
  storeResults.push([customers,avgCookie, cookiesThisHour, text]);
-  //console.log(`Here are the results:`)
-  //console.table(storeResults);
  
-  var hotel = new inventory(customers,avgCookie, cookiesThisHour, text);
-  //console.log(hotel.avgCookies)
-  /*
-  function inventory(customers,avgCookie, cookiesThisHour, text){
-this.customers=0;
-this.avgCookie = 0;
-this.cookiesThisHour = 0;
-this.text = '';
-};
-var
-  */
    allInventory.push(storeName,text);
+
+   //Call the addListItem function to create a new list item
+  addListItem(text,storeName);
   };  
  
   //allInventory.push([storeName,storeResults]);
@@ -131,36 +112,66 @@ var
 
 addElement(storeName);
 };
+console.table(storeResults[0])
+
+//Manipulate the DOM
+
 console.table("value" + allInventory[0][1]);
 
-function addElement (li) {
-  // create new elements
- // const newArticle = document.createElement("article");
- // const newH2 = document.createElement("h2");
-  //const p = document.createElement("p");
- // const ul = document.createElement("ul");
- const newEl = document.createElement("li");
-  //const img = document.createElement("img");
+
+
+function addElement(storeName) {
+
+  let myStore = storeName;
+  //Set the value for the first window to add data too
+  let storeSection= document.getElementById('store-profiles');
+ 
+  // Define new elements
+  const articleElem = document.createElement('article');
+  articleElem.id = storeName;
+  const h2El = document.createElement('h2');
+  h2El.innerText=storeName;
+  const pEl = document.createElement('p');
+  const ulEl = document.createElement('ul');
+  const newEl = document.createElement('li');
+  const imgEl = document.createElement('img');
+    
+  storeSection.appendChild(articleElem);
+ 
+ //Create new elements under the article
+  articleElem.appendChild(h2El);
+  articleElem.appendChild(pEl);
+  articleElem.appendChild(ulEl);
+  articleElem.appendChild(imgEl);
   
-  // Set content value of the h2
-  const newH2 = document.createTextNode(storeName);
-  newEl.appendChild(newH2);
+};
+addElement(storeName);
+
+function addListItem(item,storeName) {
+
+  
+  let newItem = item;
+  let store = storeName;
+  console.log("your store is" + storeName)
+
+  
+  
+  //1. Set the value for the first window to add data too
+ //let storeList= document.lastElementChild.getElementsByTagName("ul");
+
+  //var storelist = document.getElementById(store);
+  
+ // console.log(storelist.firstElementChild);
+
+ // const newEl = document.createElement('li');
+ // newEl.innerText = item;
+ // let storeList = document.querySelector('article ul');
+ // console.dir(storeList);
+
   // Set content value of the list item
-  //const li = document.createTextNode(text);
-
-  // add the text node to the newly created div
+  //storeList.appendChild(newEl);
   
-
-  // add the newly created element and its content into the DOM
-  var position = document.getElementsByTagName(ul)[0];
-  
-  position.appendChild(li)
-}
-//console.log(`${shopCreator.CxPerHour()}.`)
-//Create a new book object using the object constructor notation
-//let DariusBook = new bookCreator('Minding My Own Data','Darion McMlay',1120,2004,'non-fiction');
-
-//console.log(`${.author}.`);
+}; 
 
 //Stores the min/max hourly customers, and the average cookies per customer, in object properties
 //Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
