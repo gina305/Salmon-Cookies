@@ -42,8 +42,9 @@ for (let i = 0; i < stores.length; i++) {
   
   
   let newStore = new shop(storeName,min,max,avgCookie,cxPerHour);
- 
+
 console.log(newStore.storeName);
+addElement(newStore.storeName);
 
 //storeResults.push([newStore.storeName,newStore.minCustomers,newStore.maxCustomers,newStore.avgCookiePerSale,newStore.cxPerHour]);
   
@@ -76,6 +77,7 @@ console.log(newStore.storeName);
     storeResults.push(cookies);
 
     //Call the list function to add this text to a list
+    render(text, newStore.storeName);
   };
   
   //Push store text array to the 'results' variable in the store object
@@ -86,4 +88,58 @@ console.log(newStore.storeName);
 //console.log(storeResults.storeName);
  //get last value or array
   console.table(newStore.results[14]); 
+
+  
 };
+
+function addElement(storeName) {
+
+  let myStore = storeName;
+  //Set the value for the first window to add data too
+  let storeSection= document.getElementById('store-profiles');
+
+  let listSection= document.getElementsByTagName('ul');
+ 
+  // Define new elements
+  const articleElem = document.createElement('article');
+  //articleElem.id = storeName;
+  const h2El = document.createElement('h2');
+  h2El.innerText=myStore;
+  const pEl = document.createElement('p');
+  const ulEl = document.createElement('ul');
+  ulEl.className=myStore;
+  const tableElem = document.createElement('table');
+  articleElem.appendChild(tableElem);
+  
+  const imgEl = document.createElement('img');
+    
+  storeSection.appendChild(articleElem);
+ 
+ //Create new elements under the article
+  articleElem.appendChild(h2El);
+  articleElem.appendChild(pEl);
+  articleElem.appendChild(ulEl);
+  articleElem.appendChild(imgEl);
+};
+function render(item, storeName) {
+
+  let myStore = storeName;
+  let newText = item;
+  console.log(newText);
+  //Set the value for the first window to add data too
+  let storeSection= document.getElementsByClassName(storeName);
+
+  const li = document.createElement('li');
+  li.innerText=newText;
+    
+  //Access the first index of the NodeList and call the appendChild method
+  storeSection[0].appendChild(li);
+
+ console.log("nodes length: " + storeSection.length);
+
+};
+
+/*Each cookie stand location should have a separate render() method that creates and appends its row to the table
+
+The header row and footer row are each created in their own stand-alone function
+NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).*/
