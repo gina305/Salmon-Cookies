@@ -110,7 +110,6 @@ function addElement(storeName) {
   ulEl.className=myStore;
   const tableElem = document.createElement('table');
   articleElem.appendChild(tableElem);
-  
   const imgEl = document.createElement('img');
     
   storeSection.appendChild(articleElem);
