@@ -26,6 +26,7 @@
   }
   li{
     font-style: italic;
+    font-size: 1.9vw;
   }
   head{
     border-color: pink;
@@ -34,4 +35,7 @@
   body{
     padding: 20px;
     
+  }
+  table{
+    border: 10px red;
   }
