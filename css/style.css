@@ -29,7 +29,14 @@
     display: inline-block; 
     background-color: salmon; 
   }
+  h2{
+    padding: 2px;
+  }
   
+  #head tr th{
+    padding: 5px;
+  }
+
   body{
     font-family: "Sofia", sans-serif;
   }
@@ -90,6 +97,24 @@
   padding: 1px;
   border: 1px solid rgb(0, 0, 0);    
   background-color: salmon; 
+}
+#body tr td{
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  padding: 5px;
+}
+
+#body tr{
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  padding: 5px;
+}
+
+
+#head{
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  padding: 5px;
 }
 
 #fish1{
@@ -200,4 +225,13 @@ display: inline;
 #time{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
+}
+#fs{
+  border: 1px solid rgb(0, 0, 0); 
+  text-align: center;  
+  padding: 5px;
+}
+#form{
+  padding: 10px 15px;
+
 }
