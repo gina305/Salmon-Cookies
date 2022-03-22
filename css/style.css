@@ -197,3 +197,7 @@ display: inline;
   border: 1px solid rgb(0, 0, 0);    
   background-color: salmon; 
 }
+#time{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
